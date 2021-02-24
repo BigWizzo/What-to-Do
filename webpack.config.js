@@ -4,8 +4,6 @@ const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 const TerserPlugin = require("terser-webpack-plugin");
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
-
-
 const path = require("path");
 
 module.exports = {
@@ -13,7 +11,7 @@ module.exports = {
   output: {
     filename: "app.js",
     path: path.resolve(__dirname, "dist"),
-    publicPath: "/",
+    publicPath: "./",
     assetModuleFilename: 'images/[name][ext][query]'
   },
   plugins: [
