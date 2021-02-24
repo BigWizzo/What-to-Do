@@ -1,6 +1,6 @@
 @import "~bootstrap/scss/bootstrap";
 @import url('https://fonts.googleapis.com/css2?family=Courgette&family=Righteous&display=swap');
-.title {
+* {
   font-family: 'Righteous', cursive;
 }
 
@@ -8,6 +8,17 @@
   color: rgb(151, 34, 34);
 }
 
-#content {
-  font-family: 'Courgette', cursive;
+// #content {
+//   font-family: 'Courgette', cursive;
+// }
+
+.tab-content {
+  width: 100%;
+}
+
+@media (max-width: 600px) {
+
+  .respond {
+    flex-direction: column;
+  }
 }
