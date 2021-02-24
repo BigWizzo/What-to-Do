@@ -1,5 +1,11 @@
-import "./scss/styles.scss"
-import Project from "./components/projects";
+import "./scss/styles.scss";
+import tabs from "./components/main";
 
-const project12 = new Project('proTitle12')
-console.log(project12)
+function component() {
+    const element = document.querySelector('#content');
+  
+    element.innerHTML = tabs();
+    return element;
+}
+  
+component();
