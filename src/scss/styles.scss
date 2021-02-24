@@ -1,5 +1,13 @@
 @import "~bootstrap/scss/bootstrap";
+@import url('https://fonts.googleapis.com/css2?family=Courgette&family=Righteous&display=swap');
+.title {
+  font-family: 'Righteous', cursive;
+}
 
-body {
-  color: red;
+.inter-title {
+  color: rgb(151, 34, 34);
+}
+
+#content {
+  font-family: 'Courgette', cursive;
 }
