@@ -47,16 +47,16 @@ export default class Store {
             proTitle: 'Third',
             todos: [
                 {
-                    todoTitle: 'wow wow',
-                    description: 'go do stuff',
+                    todoTitle: 'wow wow 2',
+                    description: 'go do stuff 2',
                     dueDate: 'today',
                     priority: 'high',
                     notes: 'no notes',
                     checkList: 'not done'
                 },
                 {
-                    todoTitle: 'makes sense?',
-                    description: 'go do stuff',
+                    todoTitle: 'makes sense? 2',
+                    description: 'go do stuff 2',
                     dueDate: 'today',
                     priority: 'high',
                     notes: 'no notes',

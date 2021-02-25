@@ -16,8 +16,10 @@ export default class UI {
     static displayProjects() {
         const projects = Store.getProjects();
         
-        projects.forEach((project) => UI.addProjects(project));
-        showToDos()
+        projects.forEach((project, index) => {
+            UI.addProjects(project)
+            showToDos(index)
+        });
         showProjects()
     }
 
@@ -45,46 +47,26 @@ export default class UI {
         menu.appendChild(button);
         content.appendChild(target);
     }
-    
-    
-    static addToDoToList(todo) {
-        const list = document.querySelector('#to-do-list');
-        const row = document.createElement('tr')
-        
-        row.innerHTML = `
-        <td>${todo.todoTitle}</td>
-        <td>${todo.description}</td>
-        <td>${todo.dueDate}</td>
-        <td>${todo.priority}</td>
-        <td>${todo.notes}</td>
-        <td>${todo.checkList}</td>
-        <td><a href="#" class="btn btn-danger btn-sm delete">X</a></td>`;
-        list.appendChild(row);
-    }
-    
-    static displayToDos() {
-        const projects = Store.getProjects();
-        
-        projects[2].todos.forEach((todo) => UI.addToDoToList(todo));
-    }
-    
-    //     static clearFields() {
-        
-        //     }
-        
-        
-        //     static deleteBook(el) {
-            
-//       }
-
-//    static showAlert(message, className) {
-    
-//    }
 }
 
- const showToDos = () => {
+ const showToDos = (i) => {
+    const projects = Store.getProjects();
     const list = document.querySelectorAll('.to-do-list');
-    console.log(list);
+    list.forEach(project => {
+    projects[i].todos.forEach((todo) => {
+    const row = document.createElement('tr')
+    
+    row.innerHTML = `
+    <td>${todo.todoTitle}</td>
+    <td>${todo.description}</td>
+    <td>${todo.dueDate}</td>
+    <td>${todo.priority}</td>
+    <td>${todo.notes}</td>
+    <td>${todo.checkList}</td>
+    <td><a href="#" class="btn btn-danger btn-sm delete">X</a></td>`;
+    project.appendChild(row);
+        });
+        })
 }
 
 const showProjects = () => {
