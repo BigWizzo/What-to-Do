@@ -1,4 +1,3 @@
-import Table from "./table";
 import UI from "./UI";
 
 document.addEventListener('DOMContentLoaded', UI.displayToDos);
@@ -17,7 +16,7 @@ export default class Tabs {
     </div>
     <div class="col-9">
       <div class="tab-content" id="v-pills-tabContent">
-        <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">${Table()}</div>
+        <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab"></div>
       </div>
     </div>
   </div>
