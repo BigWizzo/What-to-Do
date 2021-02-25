@@ -21,20 +21,19 @@ export default class UI {
     static displayToDos() {
         const projects = Store.getProjects();
 
-        projects[1].todos.forEach((project) => UI.addToDoToList(project));
+        projects[1].todos.forEach((todo) => UI.addToDoToList(todo));
     }
 
     static addProjects(prjc) {
         const menu = document.querySelector('#v-pills-tab');
-        const button = document.createElement('button');
+        const button = document.createElement('a');
         const content = document.querySelector('#v-pills-tabContent');
         const target = document.createElement('div');
-
+        
         button.setAttribute("class", "nav-link");
-        button.setAttribute("id", `v-pills-${UI.urlSlug(prjc.proTitle)}`);
-        button.setAttribute("data-bs-toggle", "pill");
-        button.setAttribute("data-bs-target", `#v-pills-${UI.urlSlug(prjc.proTitle)}`);
-        button.setAttribute("type", "button");
+        button.setAttribute("id", `v-pills-${UI.urlSlug(prjc.proTitle)}-tab`);
+        button.setAttribute("data-toggle", "pill");
+        button.setAttribute("href", `#v-pills-${UI.urlSlug(prjc.proTitle)}`);
         button.setAttribute("role", "tab");
         button.setAttribute("aria-controls", `v-pills-${UI.urlSlug(prjc.proTitle)}`);
         button.setAttribute("aria-selected", "false");
