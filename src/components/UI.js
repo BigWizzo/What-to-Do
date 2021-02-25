@@ -1,4 +1,5 @@
 import Store from './storage.js';
+import Table from "./table";
 
 //UI class
 export default class UI {
@@ -16,14 +17,11 @@ export default class UI {
         const projects = Store.getProjects();
         
         projects.forEach((project) => UI.addProjects(project));
+        showToDos()
+        showProjects()
     }
 
-    static displayToDos() {
-        const projects = Store.getProjects();
-
-        projects[1].todos.forEach((todo) => UI.addToDoToList(todo));
-    }
-
+    
     static addProjects(prjc) {
         const menu = document.querySelector('#v-pills-tab');
         const button = document.createElement('a');
@@ -38,21 +36,21 @@ export default class UI {
         button.setAttribute("aria-controls", `v-pills-${UI.urlSlug(prjc.proTitle)}`);
         button.setAttribute("aria-selected", "false");
         button.innerText = `${prjc.proTitle}`;
-
+        
         target.setAttribute("class", "tab-pane fade");
         target.setAttribute("id", `v-pills-${UI.urlSlug(prjc.proTitle)}`);
         target.setAttribute("aria-labelledby", `v-pills-${UI.urlSlug(prjc.proTitle)}`);
         target.setAttribute("role", "tabpanel");
-        target.innerText = `${prjc.proTitle}`;
+        target.innerHTML = `${Table()}`;
         menu.appendChild(button);
         content.appendChild(target);
     }
-
+    
+    
     static addToDoToList(todo) {
         const list = document.querySelector('#to-do-list');
-
         const row = document.createElement('tr')
-
+        
         row.innerHTML = `
         <td>${todo.todoTitle}</td>
         <td>${todo.description}</td>
@@ -63,18 +61,38 @@ export default class UI {
         <td><a href="#" class="btn btn-danger btn-sm delete">X</a></td>`;
         list.appendChild(row);
     }
-
-
-    static clearFields() {
-
+    
+    static displayToDos() {
+        const projects = Store.getProjects();
+        
+        projects[2].todos.forEach((todo) => UI.addToDoToList(todo));
     }
+    
+    //     static clearFields() {
+        
+        //     }
+        
+        
+        //     static deleteBook(el) {
+            
+//       }
 
+//    static showAlert(message, className) {
+    
+//    }
+}
 
-    static deleteBook(el) {
+ const showToDos = () => {
+    const list = document.querySelectorAll('.to-do-list');
+    console.log(list);
+}
 
-      }
-
-   static showAlert(message, className) {
-
-   }
+const showProjects = () => {
+    const list = document.querySelectorAll('.nav-link');
+    
+    list.forEach(project => {
+        project.addEventListener('click', e => {
+            console.log(e.target.id);
+        })
+    })
 }

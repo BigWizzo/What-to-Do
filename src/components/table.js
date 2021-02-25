@@ -1,3 +1,4 @@
+
 const Table = () => `
 <table class="table">
   <thead>
@@ -10,8 +11,8 @@ const Table = () => `
       <th scope="col">Checklist</th>
     </tr>
   </thead>
-  <tbody id="to-do-list">
-
+  <tbody id="to-do-list" class="to-do-list">
+     
   </tbody>
 </table>
 `;
