@@ -1,75 +1,54 @@
-//Store class
+import Project from './projects.js';
+
 export default class Store {
     static getProjects() {
-        let projects = [{
-            proTitle: 'First',
-            todos: [
-                {
-                    todoTitle: 'first todo',
-                    description: 'go do stuff',
-                    dueDate: 'today',
-                    priority: 'high',
-                    notes: 'no notes',
-                    checkList: 'not done'
-                },
-                {
-                    todoTitle: 'second todo',
-                    description: 'go do stuff',
-                    dueDate: 'today',
-                    priority: 'high',
-                    notes: 'no notes',
-                    checkList: 'not done'
-                }
-            ]
-        },
-        {
-            proTitle: 'Second',
-            todos: [
-                {
-                    todoTitle: 'wow wow 1',
-                    description: 'go do stuff 1',
-                    dueDate: 'today',
-                    priority: 'high',
-                    notes: 'no notes',
-                    checkList: 'not done'
-                },
-                {
-                    todoTitle: 'makes sense? 1',
-                    description: 'go do stuff 1',
-                    dueDate: 'today',
-                    priority: 'high',
-                    notes: 'no notes',
-                    checkList: 'not done'
-                }
-            ]
-        },
-        {
-            proTitle: 'Third',
-            todos: [
-                {
-                    todoTitle: 'wow wow 2',
-                    description: 'go do stuff 2',
-                    dueDate: 'today',
-                    priority: 'high',
-                    notes: 'no notes',
-                    checkList: 'not done'
-                },
-                {
-                    todoTitle: 'makes sense? 2',
-                    description: 'go do stuff 2',
-                    dueDate: 'today',
-                    priority: 'high',
-                    notes: 'no notes',
-                    checkList: 'not done'
-                }
-            ]
-        }]
+        let projects = [];
+        const project1 = new Project("First");
+        const project2 = new Project("Second");
+        const project3 = new Project("Third");
+        project1.todos.push({
+            todoTitle: "titleoftodoadded",
+            desc: "something",
+            dueDate: "10/03",
+            priority: "high",
+            notes: "no notes",
+            checkList: "its not done"
+        })
+        project1.todos.push({
+            todoTitle: "titleoftodoadded",
+            desc: "something",
+            dueDate: "10/03",
+            priority: "high",
+            notes: "no notes",
+            checkList: "its not done"
+        })
+        project2.todos.push({
+            todoTitle: "titleoftodoadded",
+            desc: "something",
+            dueDate: "10/03",
+            priority: "high",
+            notes: "no notes",
+            checkList: "its not done"
+        })
+        project1.todos.push({
+            todoTitle: "titleoftodoadded",
+            desc: "something",
+            dueDate: "10/03",
+            priority: "high",
+            notes: "no notes",
+            checkList: "its not done"
+        })
+        projects.push(project1);
+        projects.push(project2);
+        projects.push(project3);
 
         return projects;
     }
-
-    static addToDo() {
-
+    
+    static addToDo(project) {
+        const projects = this.getProjects();
+        projects.push(project);
+        console.log(projects);
     }
 
     static removeToDo() {

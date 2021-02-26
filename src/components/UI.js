@@ -108,7 +108,15 @@ document.querySelector('#todo-form').addEventListener('submit', (e) => {
   
     showModal();
 
-    const project = new Project(proTitle, todoTitle, description, dueDate, priority, notes, check);
+    const project = new Project(proTitle);
+    project.todos.push({
+      todoTitle: todoTitle,
+      desc: description,
+      dueDate: dueDate,
+      priority: priority,
+      notes: notes,
+      checkList: check
+  });
+    Store.addToDo(project)
     UI.addProjects(project);
-    console.log(project);
 })
