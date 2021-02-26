@@ -47,7 +47,6 @@ export default class Store {
     
     static addToDo(project) {
         projects.push(project);
-        console.log(projects);
     }
     
     static checkExistence(project){
@@ -56,8 +55,8 @@ export default class Store {
             if (el.proTitle === project.proTitle) {
                 newProject = el;
             }
-            console.log('hi');
         })
+        console.log(newProject);
         return newProject;
     }
     
