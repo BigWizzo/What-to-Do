@@ -8,9 +8,47 @@
   color: rgb(151, 34, 34);
 }
 
-// #content {
-//   font-family: 'Courgette', cursive;
-// }
+.form {
+  font-size: clamp(1.5rem, 2.5vw, 2.5rem);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 100;
+}
+
+.addbtn {
+  font-size: clamp(1.5rem, 2.5vw, 2.5rem);
+}
+
+.form-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.473);
+  z-index: 100;
+  transition: transform 0.5s;
+  transform: translateY(-110vh);
+}
+
+.show-modal {
+  transform: translateY(0);
+}
+
+li {
+  list-style: none;
+  display:inline;
+  
+  .long {
+    width: 20%;
+  }
+
+  .short {
+    width: 10%;
+  }
+}
 
 .tab-content {
   width: 100%;
@@ -20,5 +58,16 @@
 
   .respond {
     flex-direction: column;
+  }
+
+  .form {
+    max-width: 75%;
+  }
+}
+
+@media (min-width: 600px) {
+
+  .form {
+    max-width: 30%;
   }
 }
