@@ -46,13 +46,24 @@ export default class Store {
     }
     
     static addToDo(project) {
-        const projects = this.getProjects();
         projects.push(project);
         console.log(projects);
     }
-
-    static removeToDo() {
-
+    
+    static checkExistence(project){
+        let newProject = project;
+        projects.forEach(el => {
+            if (el.proTitle === project.proTitle) {
+                newProject = el;
+            }
+            console.log('hi');
+        })
+        return newProject;
     }
-
+    
+    static removeToDo() {
+        
+    }
+    
 }
+const projects = Store.getProjects();
