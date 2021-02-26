@@ -29,7 +29,6 @@ export default class UI {
         button.setAttribute("aria-selected", "false");
         button.innerText = `${prjc.proTitle}`;
         menu.appendChild(button);
-        console.log(prjc.todos);
         const content = document.querySelector('#v-pills-tabContent');
         const target = document.createElement('div');
         target.setAttribute("class", "tab-pane fade");
@@ -37,7 +36,6 @@ export default class UI {
         target.setAttribute("aria-labelledby", `v-pills-${UI.urlSlug(prjc.proTitle)}`);
         target.setAttribute("role", "tabpanel");
         prjc.todos.forEach(function(todo) {
-            // const todosWrap = document.querySelector(`#v-pills-${UI.urlSlug(prjc.proTitle)}`);
             const todoItem = document.createElement('div');
             todoItem.setAttribute("class", "row");
             console.log(todo.todoTitle);
@@ -86,5 +84,20 @@ export default class UI {
 
 const showModal = () => {
     const continueContainer = document.querySelector('.form-container')
-    continueContainer.classList.toggle('show-modal')
+    continueContainer.classList.toggle('show-modal');
 }
+
+document.querySelector('#todo-form').addEventListener('submit', (e) => {
+    e.preventDefault();
+    const title = document.querySelector('#title').value;
+    const description = document.querySelector('#description').value;
+    const dueDate = document.querySelector('#duedate').value;
+    const priority = document.querySelector('#priority').value;
+    const notes = document.querySelector('#notes').value;
+    const project = document.querySelector('#project').value;
+    const check = document.querySelector('#flexCheckChecked');
+  
+    console.log(title);
+
+    showModal();
+})
