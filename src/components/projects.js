@@ -1,7 +1,7 @@
 export default class Project {
   constructor(proTitle, todoTitle, description, dueDate, priority, notes, checkList) {
     this.proTitle = proTitle
-    this.todos = {}
+    this.todos = []
     this.todos.todo = {}
     this.todos.todo.todoTitle = todoTitle
     this.todos.todo.desc = description

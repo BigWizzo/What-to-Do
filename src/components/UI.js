@@ -1,4 +1,5 @@
 import Store from './storage.js';
+import Project from './projects.js';
 //UI class
 export default class UI {
     static urlSlug(title) {
@@ -38,7 +39,6 @@ export default class UI {
         prjc.todos.forEach(function(todo) {
             const todoItem = document.createElement('div');
             todoItem.setAttribute("class", "row");
-            console.log(todo.todoTitle);
             todoItem.innerHTML = `
             <div class="col-10 row">
             <div class="col-12 col-md-6 row">
@@ -89,15 +89,26 @@ const showModal = () => {
 
 document.querySelector('#todo-form').addEventListener('submit', (e) => {
     e.preventDefault();
-    const title = document.querySelector('#title').value;
+    const todoTitle = document.querySelector('#title').value;
     const description = document.querySelector('#description').value;
     const dueDate = document.querySelector('#duedate').value;
     const priority = document.querySelector('#priority').value;
     const notes = document.querySelector('#notes').value;
-    const project = document.querySelector('#project').value;
-    const check = document.querySelector('#flexCheckChecked');
-  
-    console.log(title);
+    const proTitle = document.querySelector('#project').value;
+    const checkInput = document.querySelector('#flexCheckChecked');
 
+    function checkValue(read) {
+        if (read.checked) {
+          return 'Done';
+        }
+        return 'Not Done';
+      }
+    
+      const check = checkValue(checkInput);
+  
     showModal();
+
+    const project = new Project(proTitle, todoTitle, description, dueDate, priority, notes, check);
+    UI.addProjects(project);
+    console.log(project);
 })
