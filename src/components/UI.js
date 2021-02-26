@@ -31,17 +31,20 @@ export default class UI {
         menu.appendChild(button);
 
         console.log(prjc.todos);
+        const content = document.querySelector('#v-pills-tabContent');
+        const target = document.createElement('div');
+        target.setAttribute("class", "tab-pane fade");
+        target.setAttribute("id", `v-pills-${UI.urlSlug(prjc.proTitle)}`);
+        target.setAttribute("aria-labelledby", `v-pills-${UI.urlSlug(prjc.proTitle)}`);
+        target.setAttribute("role", "tabpanel");
         prjc.todos.forEach(function(todo) {
-            const content = document.querySelector('#v-pills-tabContent');
-            const target = document.createElement('div');
-            target.setAttribute("class", "tab-pane fade");
-            target.setAttribute("id", `v-pills-${UI.urlSlug(prjc.proTitle)}`);
-            target.setAttribute("aria-labelledby", `v-pills-${UI.urlSlug(prjc.proTitle)}`);
-            target.setAttribute("role", "tabpanel");
+            // const todosWrap = document.querySelector(`#v-pills-${UI.urlSlug(prjc.proTitle)}`);
+            const todoItem = document.createElement('div');
             console.log(todo.todoTitle);
-            target.innerText = `${todo.todoTitle}`;
-            content.appendChild(target);
+            todoItem.innerText = `${todo.todoTitle}`;
+            target.appendChild(todoItem);
         });
+        content.appendChild(target);
     }
 
     static clearFields() {
