@@ -18,13 +18,7 @@ export default class UI {
         projects.forEach((project, index) => UI.addProjects(project, index));
     }
 
-    // static displayToDos() {
-        // const projects = Store.getProjects();
-// 
-        // projects[1].todos.forEach((todo) => UI.addToDoToList(todo));
-    // }
-
-    static addProjects(prjc, index) {
+    static addProjects(prjc) {
         const menu = document.querySelector('#v-pills-tab');
         const button = document.createElement('a');
         const content = document.querySelector('#v-pills-tabContent');
@@ -38,41 +32,18 @@ export default class UI {
         button.setAttribute("aria-controls", `v-pills-${UI.urlSlug(prjc.proTitle)}`);
         button.setAttribute("aria-selected", "false");
         button.innerText = `${prjc.proTitle}`;
+        menu.appendChild(button);
 
         target.setAttribute("class", "tab-pane fade");
         target.setAttribute("id", `v-pills-${UI.urlSlug(prjc.proTitle)}`);
         target.setAttribute("aria-labelledby", `v-pills-${UI.urlSlug(prjc.proTitle)}`);
         target.setAttribute("role", "tabpanel");
-        target.innerHTML = `
-          <table class="table">
-            <thead>
-              <tr>
-                <th scope="col">${prjc.proTitle}, ${index}</th>
-                <th scope="col">Description</th>
-                <th scope="col">Due date</th>
-                <th scope="col">Priority</th>
-                <th scope="col">Notes</th>
-                <th scope="col">Checklist</th>
-              </tr>
-            </thead>
-            <tbody id="to-do-list">
-              <tr>
-                 <td>${prjc.proTitle}, ${index}</td>
-                 <td></td>
-                 <td></td>
-                 <td></td>
-                 <td></td>
-                 <td></td>
-                 <td><a href="#" class="btn btn-danger btn-sm delete">X</a></td>
-              </tr>
-            </tbody>
-          </table>
-        `;
-        menu.appendChild(button);
-        content.appendChild(target);
-        // const list = document.querySelector('#to-do-list');
-        // const row = document.createElement('tr')
-        // list.appendChild(row);
+        console.log(prjc.todos);
+        prjc.todos.forEach(function(todo) {
+            console.log(todo.todoTitle);
+            target.innerText = `${todo.todoTitle}`;
+            content.appendChild(target);
+        });
     }
 
     static clearFields() {
