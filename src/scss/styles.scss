@@ -1,7 +1,7 @@
 @import "~bootstrap/scss/bootstrap";
-@import url('https://fonts.googleapis.com/css2?family=Courgette&family=Righteous&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Courgette&family=Righteous&display=swap");
 * {
-  font-family: 'Righteous', cursive;
+  font-family: "Righteous", cursive;
 }
 
 .inter-title {
@@ -9,7 +9,7 @@
 }
 
 .form {
-  font-size: clamp(1.5rem, 2.5vw, 2.5rem);
+  font-size: clamp(1rem, 1.5vw, 1.5rem);
   position: absolute;
   top: 50%;
   left: 50%;
@@ -39,8 +39,8 @@
 
 li {
   list-style: none;
-  display:inline;
-  
+  display: inline;
+
   .long {
     width: 20%;
   }
@@ -55,7 +55,6 @@ li {
 }
 
 @media (max-width: 600px) {
-
   .respond {
     flex-direction: column;
   }
@@ -66,7 +65,6 @@ li {
 }
 
 @media (min-width: 600px) {
-
   .form {
     max-width: 30%;
   }

@@ -57,12 +57,21 @@ export default class UI {
       const addButton = document.createElement('div');
         addButton.setAttribute("class","btn btn-light addbtn w-100 bolder text-primary");
         addButton.innerText = "+";
+        addButton.addEventListener('click', e => {
+            showModal();
+          })  
         content.appendChild(addButton);
     }
+
     static clearFields() {
     }
     static deleteBook(el) {
       }
    static showAlert(message, className) {
    }
+}
+
+const showModal = () => {
+    const continueContainer = document.querySelector('.form-container')
+    continueContainer.classList.toggle('show-modal')
 }
