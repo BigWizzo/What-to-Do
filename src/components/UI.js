@@ -1,22 +1,19 @@
 import Store from './storage.js';
-
 //UI class
 export default class UI {
-    static urlSlug(title) {
-          return title
-            .split(/\W/)
-            .filter(obj => {
-              return obj !== "";
-            })
-            .join("-")
-            .toLowerCase();
+    static urlSlug(title) {
+          return title
+            .split(/\W/)
+            .filter(obj => {
+              return obj !== "";
+            })
+            .join("-")
+            .toLowerCase();
     }
-
     static displayProjects() {
         const projects = Store.getProjects();
         projects.forEach((project) => UI.addProjects(project));
     }
-
     static addProjects(prjc) {
         const menu = document.querySelector('#v-pills-tab');
         const button = document.createElement('a');        
@@ -29,7 +26,6 @@ export default class UI {
         button.setAttribute("aria-selected", "false");
         button.innerText = `${prjc.proTitle}`;
         menu.appendChild(button);
-
         console.log(prjc.todos);
         const content = document.querySelector('#v-pills-tabContent');
         const target = document.createElement('div');
@@ -46,17 +42,10 @@ export default class UI {
         });
         content.appendChild(target);
     }
-
     static clearFields() {
-
     }
-
-
     static deleteBook(el) {
-
       }
-
    static showAlert(message, className) {
-
    }
 }
