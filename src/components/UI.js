@@ -108,8 +108,8 @@ document.querySelector('#todo-form').addEventListener('submit', (e) => {
   
     showModal();
 
-    const tempProject = new Project(proTitle);
-    const project = Store.checkExistence(tempProject);
+    const project = new Project(proTitle);
+    // const project = Store.checkExistence(tempProject);
     project.todos.push({
       todoTitle: todoTitle,
       desc: description,
@@ -119,6 +119,6 @@ document.querySelector('#todo-form').addEventListener('submit', (e) => {
       checkList: check
   });
     
-    Store.addToDo(project);
     UI.addProjects(project);
+    Store.addToDo(project);
 })

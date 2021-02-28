@@ -11,3 +11,6 @@ import Tabs from "./components/main";
 // component();
 
 Tabs.createTabs();
+
+// const arr = [1, 2 , 3];
+// console.log(arr.indexOf(2))
