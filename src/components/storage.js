@@ -53,7 +53,7 @@ export default class Store {
     
     static addToDo(project, todo) {
         const projects = Store.getProjects();
-        console.log(projects.some((element) => element.proTitle === project.proTitle))
+        console.log(todo.time)
         if (projects.some((element) => element.proTitle === project.proTitle) == false || projects.length === 0) {
             console.log('nothing found'); // execute push method
             projects.push(project);

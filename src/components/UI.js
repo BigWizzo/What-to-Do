@@ -44,6 +44,7 @@ export default class UI {
             todoItem.innerHTML = `
             <div class="col-10 row">
             <div class="col-12 col-md-6 row">
+            <li class="d-none">${todo.time}</li>
             <li class="col">${todo.todoTitle}</li>
             <li class="col">${todo.description}</li>
             <li class="col">${todo.dueDate}</li>
@@ -108,7 +109,6 @@ document.querySelector('#todo-form').addEventListener('submit', (e) => {
     const notes = document.querySelector('#notes').value;
     const proTitle = document.querySelector('#project').value;
     const checkInput = document.querySelector('#flexCheckChecked');
-
     function checkValue(read) {
         if (read.checked) {
           return 'Done';
@@ -127,7 +127,8 @@ document.querySelector('#todo-form').addEventListener('submit', (e) => {
       dueDate: dueDate,
       priority: priority,
       notes: notes,
-      checkList: check
+      checkList: check,
+      time: new Date().getTime()
     }
     // const project = Store.checkExistence(tempProject);
     project.todos.push(newTodos);
