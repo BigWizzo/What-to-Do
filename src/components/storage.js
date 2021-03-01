@@ -2,45 +2,6 @@ import Project from './projects.js';
 
 export default class Store {
     static getProjects() {
-        // let projects = [];
-        // const project1 = new Project("First");
-        // const project2 = new Project("Second");
-        // const project3 = new Project("Third");
-        // project1.todos.push({
-            // todoTitle: "titleoftodoadded",
-            // desc: "something",
-            // dueDate: "10/03",
-            // priority: "high",
-            // notes: "no notes",
-            // checkList: "its not done"
-        // })
-        // project1.todos.push({
-            // todoTitle: "titleoftodoadded",
-            // desc: "something",
-            // dueDate: "10/03",
-            // priority: "high",
-            // notes: "no notes",
-            // checkList: "its not done"
-        // })
-        // project2.todos.push({
-            // todoTitle: "titleoftodoadded",
-            // desc: "something",
-            // dueDate: "10/03",
-            // priority: "high",
-            // notes: "no notes",
-            // checkList: "its not done"
-        // })
-        // project1.todos.push({
-            // todoTitle: "titleoftodoadded",
-            // desc: "something",
-            // dueDate: "10/03",
-            // priority: "high",
-            // notes: "no notes",
-            // checkList: "its not done"
-        // })
-        // projects.push(project1);
-        // projects.push(project2);
-        // projects.push(project3);
         let projects;
         if (localStorage.getItem('projects') === null) {
             projects = [];
@@ -62,34 +23,27 @@ export default class Store {
             for (let i = 0; i <= projects.length - 1; i++) {
                 if (projects[i].proTitle == project.proTitle) {
                     projects[i].todos.push(todo);
-                    console.log(projects[i].proTitle);
-                    console.log(project);
-                    console.log(projects[i].todos);
-                    console.log(i);
-                    console.log(project.proTitle);
                     console.log('array has elements and duplicate is found THIS WILL BE #BREAK#'); // duplicate found
                     localStorage.setItem('projects', JSON.stringify(projects));
                 }
             }
         }
-        // projects.push(project);
-        // localStorage.setItem('projects', JSON.stringify(projects));
+        location.reload();
     }
     
-    // static checkExistence(project){
-    //     let newProject = project;
-    //     projects.forEach(el => {
-    //         if (el.proTitle === project.proTitle) {
-    //             newProject = el;
-    //         }
-    //     })
-    //     console.log(newProject);
-    //     return newProject;
-    // }
-    
-    static removeToDo() {
-        
+    static removeToDo(time) {
+        const projects = Store.getProjects();
+
+        projects.forEach((project) => {
+            project.todos.forEach((todo, index) => {
+                if(todo.time == time) {
+                    console.log(todo.time)
+                    project.todos.splice(index, 1);
+                }
+            });
+        });
+
+        localStorage.setItem('projects', JSON.stringify(projects))
     }
     
 }
-// const projects = Store.getProjects();

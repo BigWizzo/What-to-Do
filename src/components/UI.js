@@ -1,5 +1,7 @@
 import Store from './storage.js';
 import Project from './projects.js';
+import { formatDistance, subDays } from 'date-fns'
+
 //UI class
 export default class UI {
     static urlSlug(title) {
@@ -77,12 +79,19 @@ export default class UI {
         content.appendChild(addButton);
     }
 
+    static deleteToDo(el) {
+      // if(el.classList.contains('delete')) {
+        el.parentElement.parentElement.remove();
+      // }
+    }
+
     static addRemoveButton() {
      const deleteBtns = document.querySelectorAll('#delete');
      deleteBtns.forEach(function (item){
        item.addEventListener('click', (e) => {
-         // UI.deleteBook(e.target);
-         console.log(item.parentElement.parentElement.firstChild.nextSibling.firstChild.nextSibling.firstChild.nextSibling.innerText);
+         UI.deleteToDo(item);
+         let identifier = item.parentElement.parentElement.firstChild.nextSibling.firstChild.nextSibling.firstChild.nextSibling.innerText;
+         Store.removeToDo(identifier);
        })
      });
     }
