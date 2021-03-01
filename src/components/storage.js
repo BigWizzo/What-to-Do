@@ -51,32 +51,27 @@ export default class Store {
         return projects;
     }
     
-    static addToDo(project) {
+    static addToDo(project, todo) {
         const projects = Store.getProjects();
-        // if (projects.indexOf(project.proTitle)) {
-        // console.log(projects.indexOf(project.proTitle))
-        // }
-        // if (projects.length === 0) {
-            // console.log('array is empty');
-            // projects.push(project);
-            // localStorage.setItem('projects', JSON.stringify(projects));
-        // }
-
-        // for (let i = 0; i <= projects.length - 1; i++) {
-            // if (projects[i].proTitle == project.proTitle) {
-                // console.log(project);
-                // console.log(projects[i].proTitle);
-                // console.log(project.proTitle);
-                // console.log('array has elements and title is found THIS WILL BE #BREAK#');
-            // }
-        // }
-
-        // for(var i = 0; i <= projects.length - 1; i++) {
-            console.log(projects.some((element) => element.proTitle === project.proTitle))
-            if (projects.some((element) => element.proTitle === project.proTitle) == false) {
-                console.log('nothing found'); // execute push method
+        console.log(projects.some((element) => element.proTitle === project.proTitle))
+        if (projects.some((element) => element.proTitle === project.proTitle) == false || projects.length === 0) {
+            console.log('nothing found'); // execute push method
+            projects.push(project);
+            localStorage.setItem('projects', JSON.stringify(projects));
+        } else {
+            for (let i = 0; i <= projects.length - 1; i++) {
+                if (projects[i].proTitle == project.proTitle) {
+                    projects[i].todos.push(todo);
+                    console.log(projects[i].proTitle);
+                    console.log(project);
+                    console.log(projects[i].todos);
+                    console.log(i);
+                    console.log(project.proTitle);
+                    console.log('array has elements and duplicate is found THIS WILL BE #BREAK#'); // duplicate found
+                    localStorage.setItem('projects', JSON.stringify(projects));
+                }
             }
-        // }
+        }
         // projects.push(project);
         // localStorage.setItem('projects', JSON.stringify(projects));
     }

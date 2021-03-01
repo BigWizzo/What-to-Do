@@ -120,6 +120,6 @@ document.querySelector('#todo-form').addEventListener('submit', (e) => {
     // const project = Store.checkExistence(tempProject);
     project.todos.push(newTodos);
     
-    UI.addProjects(project);
+    UI.addProjects(project, newTodos);
     Store.addToDo(project);
 })
