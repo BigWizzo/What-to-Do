@@ -56,27 +56,29 @@ export default class Store {
         // if (projects.indexOf(project.proTitle)) {
         // console.log(projects.indexOf(project.proTitle))
         // }
-        if (projects.length === 0) {
-            console.log('array is empty');
+        // if (projects.length === 0) {
+            // console.log('array is empty');
+            // projects.push(project);
+            // localStorage.setItem('projects', JSON.stringify(projects));
+        // }
+
+        for (let i = 0; i <= projects.length - 1; i++) {
+            if (projects[i].proTitle == project.proTitle) {
+                console.log(project);
+                console.log(projects[i].proTitle);
+                console.log(project.proTitle);
+                console.log('array has elements and title is found THIS WILL BE #BREAK#');
+            }
+        }
+
+        if (project.hasOwnProperty(project.proTitle) == false || projects.length === 0) {
+            console.log(project);
+            console.log(project.hasOwnProperty(project.proTitle));
+            console.log(project.proTitle);
+            console.log('no items found');
             projects.push(project);
             localStorage.setItem('projects', JSON.stringify(projects));
         }
-
-        // for (let i = 0; i <= projects.length - 1; i++) {
-           //   console.log(projects[i].proTitle)
-            if (projects.some(project => project.proTitle)){
-                console.log(project)
-                console.log((project.proTitle));
-                console.log('array has elements and title is found');
-              //   console.log(projects[i])
-                // projects[i].todos.push();
-            } else {
-                console.log((project.proTitle));
-                console.log('project title not found');
-                // projects.push(project);
-                // localStorage.setItem('projects', JSON.stringify(projects));
-            }
-        // }
         // projects.push(project);
         // localStorage.setItem('projects', JSON.stringify(projects));
     }
