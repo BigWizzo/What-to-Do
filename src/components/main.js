@@ -1,6 +1,5 @@
 import UI from "./UI";
 
-document.addEventListener('DOMContentLoaded', UI.displayToDos);
 document.addEventListener('DOMContentLoaded', UI.displayProjects);
 
 export default class Tabs {
