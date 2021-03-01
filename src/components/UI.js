@@ -17,7 +17,9 @@ export default class UI {
         UI.addProjects(project);
         });
         UI.addButton();
+        UI.addRemoveButton();
     }
+
     static addProjects(prjc) {
         const menu = document.querySelector('#v-pills-tab');
         const button = document.createElement('a');        
@@ -53,7 +55,7 @@ export default class UI {
             </div>
             </div>
             <div class="col-2 row">
-            <span class="col-6"><a href="#" class="btn btn-danger btn-sm delete"><i class="far fa-trash-alt"></i></a></span>
+            <span class="col-6" id="delete"><a href="#" class="btn btn-danger btn-sm delete"><i class="far fa-trash-alt"></i></a></span>
             <span class="col-6"><a href="#" class="btn btn-primary btn-sm delete"><i class="far fa-edit"></i></a></span>
             </div>
             `
@@ -72,6 +74,16 @@ export default class UI {
             showModal();
           })  
         content.appendChild(addButton);
+    }
+
+    static addRemoveButton() {
+     const deleteBtns = document.querySelectorAll('#delete');
+     deleteBtns.forEach(function (item){
+       item.addEventListener('click', (e) => {
+         // UI.deleteBook(e.target);
+         console.log(item.parentElement.parentElement.firstChild.nextSibling.firstChild.nextSibling.firstChild.nextSibling.innerText);
+       })
+     });
     }
 
     static clearFields() {

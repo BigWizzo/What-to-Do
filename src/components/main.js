@@ -22,3 +22,14 @@ export default class Tabs {
     `;
   }
 }
+
+// Remove a book
+
+ 
+//  .addEventListener('click', (e) => {
+//   // UI.deleteBook(e.target);
+//   console.log(e.target);
+//   // const pagesPar = e.target.parentElement.previousElementSibling.previousElementSibling.textContent;
+//   // Store.removeBook(titlePar, pagesPar);
+//   // UI.showAlert('Book removed', 'success');
+// });
