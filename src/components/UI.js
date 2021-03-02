@@ -113,21 +113,27 @@ const editToDo = () => {
       console.log(identifier);
       showModal();
       UI.fillFields(identifier);
-      updateForm();
+      updateForm(identifier);
       // UI.deletePrTab(e.target);
       // Store.removePr(identifier);
     })
   });
  }
 
- const updateForm = () => {
+ const updateForm = (identifier) => {
    const form = document.querySelector('#todo-form');
    form.id = "update-form";
    console.log(form.lastElementChild.value)
    form.lastElementChild.value = 'update todo'
    form.lastElementChild.addEventListener('click', (e) => {
     const todoTitle = document.querySelector('#title').value;
-     console.log(todoTitle)
+    const description = document.querySelector('#description').value;
+    const dueDate = document.querySelector('#duedate').value;
+    const priority = document.querySelector('#priority').value;
+    const notes = document.querySelector('#notes').value;
+    const proTitle = document.querySelector('#project').value;
+    const checkInput = document.querySelector('#flexCheckChecked');
+    console.log(todoTitle)
    })
  }
 
