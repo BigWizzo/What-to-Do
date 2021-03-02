@@ -44,7 +44,7 @@ export default class UI {
         addButton.innerText = "+";
         addButton.addEventListener('click', e => {
             showModal();
-          })  
+          })
         content.appendChild(addButton);
     }
 
@@ -71,6 +71,24 @@ export default class UI {
     static clearFields() {
     }
 
+    static fillFields(time) {
+      const projects = Store.getProjects();
+      projects.forEach((project) => {
+        project.todos.forEach((todo) => {
+            if(todo.time == time) {
+              document.querySelector('#title').value = todo.time;
+               document.querySelector('#title').value = todo.todoTitle;
+               document.querySelector('#description').value = todo.description;
+               document.querySelector('#duedate').value = todo.dueDate;
+               document.querySelector('#priority').value = todo.priority;
+               document.querySelector('#notes').value = todo.notes;
+               document.querySelector('#project').value = todo.project
+            }
+        });
+    });
+      // document.querySelector('#flexCheckChecked = 'a');
+    }
+
 
    static showAlert(message, className) {
    }
@@ -93,6 +111,8 @@ const editToDo = () => {
     item.addEventListener('click', (e) => {
       let identifier = item.parentElement.parentElement.parentElement.firstChild.nextSibling.firstChild.nextSibling.firstChild.nextSibling.innerText;
       console.log(identifier);
+      showModal();
+      UI.fillFields(identifier);
       // UI.deletePrTab(e.target);
       // Store.removePr(identifier);
     })
