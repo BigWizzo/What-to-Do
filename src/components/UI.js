@@ -113,10 +113,21 @@ const editToDo = () => {
       console.log(identifier);
       showModal();
       UI.fillFields(identifier);
+      updateForm();
       // UI.deletePrTab(e.target);
       // Store.removePr(identifier);
     })
   });
+ }
+
+ const updateForm = () => {
+   const form = document.querySelector('#todo-form');
+   console.log(form.lastElementChild.value)
+   form.lastElementChild.value = 'update todo'
+   form.lastElementChild.addEventListener('click', (e) => {
+    const todoTitle = document.querySelector('#title').value;
+     console.log(todoTitle)
+   })
  }
 
 const showModal = () => {
