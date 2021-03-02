@@ -81,11 +81,12 @@ export default class UI {
                document.querySelector('#due-date').value = todo.dueDate;
                document.querySelector('#priority').value = todo.priority;
                document.querySelector('#notes').value = todo.notes;
-               document.querySelector('#project').value = project.proTitle;
+               const title = document.querySelector('#project');
+               title.value = project.proTitle;
+               title.disabled = true;
             }
         });
     });
-      // document.querySelector('#flexCheckChecked = 'a');
     }
 
 
@@ -123,7 +124,7 @@ const editToDo = () => {
    const form = document.querySelector('#todo-form');
    form.id = "update-form";
    console.log(form.lastElementChild.value)
-   form.lastElementChild.value = 'update todo'
+   form.lastElementChild.value = 'Update To Do'
    form.lastElementChild.addEventListener('click', (e) => {
     e.preventDefault();
     const todoTitle = document.querySelector('#title').value;

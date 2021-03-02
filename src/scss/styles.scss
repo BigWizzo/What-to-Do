@@ -45,14 +45,6 @@
   background-color: darken($color: rgb(223, 249, 255), $amount: 5);
 }
 
-.blocker {
-  width: 15vw;
-  height: 22px;
-  position: absolute;
-  top: 40px;
-  background-color: white;
-}
-
 .form-container {
   position: absolute;
   top: 0;
@@ -71,15 +63,7 @@
 
 li {
   list-style: none;
-  display: inline;
 
-  .long {
-    width: 20%;
-  }
-
-  .short {
-    width: 10%;
-  }
 }
 
 .tab-content {
@@ -94,6 +78,7 @@ li {
   .form {
     max-width: 75%;
   }
+
 }
 
 @media (min-width: 600px) {
