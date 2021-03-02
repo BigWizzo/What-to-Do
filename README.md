@@ -3,7 +3,7 @@
 - Javascript app for creating projects and todos for themselves.
 - User can create, update and delete projects and its todos.
 
-![screenshot](screenshot.png)
+![screenshot](src/images/screenshot.png)
 
 ## Live Demo
 
