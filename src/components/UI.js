@@ -1,3 +1,4 @@
+/* eslint-disable no-use-before-define, max-len */
 import Store from './storage';
 import Project from './projects';
 
@@ -17,7 +18,6 @@ const editToDo = () => {
   editBtns.forEach((item) => {
     item.addEventListener('click', (e) => {
       const identifier = item.parentElement.parentElement.parentElement.firstChild.nextSibling.firstChild.nextSibling.firstChild.nextSibling.innerText;
-      console.log(identifier);
       showModal();
       UI.fillFields(identifier);
       updateForm(identifier);
@@ -30,7 +30,6 @@ const editToDo = () => {
 const updateForm = (identifier) => {
   const form = document.querySelector('#todo-form');
   form.id = 'update-form';
-  console.log(form.lastElementChild.value);
   form.lastElementChild.value = 'Update To Do';
   form.lastElementChild.addEventListener('click', (e) => {
     e.preventDefault();
@@ -85,7 +84,6 @@ document.querySelector('#todo-form').addEventListener('submit', (e) => {
   }
 
   const check = checkValue(checkInput);
-  console.log(description);
   showModal();
 
   const project = new Project(proTitle);
@@ -232,7 +230,7 @@ export default class UI {
     const projects = Store.getProjects();
     projects.forEach((project) => {
       project.todos.forEach((todo) => {
-        if (todo.time == time) {
+        if (todo.time === time) {
           document.querySelector('#title').value = todo.todoTitle;
           document.querySelector('#description').value = todo.desc;
           document.querySelector('#due-date').value = todo.dueDate;
@@ -246,3 +244,4 @@ export default class UI {
     });
   }
 }
+/* eslint-enable no-use-before-define, max-len */

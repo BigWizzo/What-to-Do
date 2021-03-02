@@ -1,3 +1,4 @@
+/* eslint-disable no-restricted-globals, max-len */
 export default class Store {
   static getProjects() {
     let projects;
@@ -69,3 +70,4 @@ export default class Store {
     localStorage.setItem('projects', JSON.stringify(projects));
   }
 }
+/* eslint-enable no-restricted-globals, max-len */

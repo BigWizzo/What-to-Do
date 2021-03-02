@@ -39,6 +39,7 @@
   },
   "dependencies": {
     "bootstrap": "^4.6.0",
-    "date-fns": "^2.18.0"
+    "date-fns": "^2.18.0",
+    "terser-webpack-plugin": "^5.1.1"
   }
 }
