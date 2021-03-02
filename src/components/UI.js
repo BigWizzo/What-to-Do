@@ -157,6 +157,29 @@ const toDosDisplayer = (prjc) => {
   return target;
 };
 
+const allToDosDisplayer = (prjc) => {
+  const target = document.createElement('div');
+  prjc.todos.forEach((todo) => {
+    const todoItem = document.createElement('div');
+    todoItem.setAttribute('class', 'row border-bottom pb-2 mt-2');
+    todoItem.innerHTML = `
+      <div class="col-12 col-md-6 row">
+      <li class="d-none">${todo.time}</li>
+      <li class="col">${todo.todoTitle}</li>
+      <li class="col">${todo.desc}</li>
+      <li class="col">${todo.dueDate}</li>
+      </div>
+      <div class="col-12 col-md-6 row">
+      <li class="col">${todo.priority}</li>
+      <li class="col">${todo.notes}</li>
+      <li class="col">${todo.checkList}</li>
+      </div>
+      `;
+    target.appendChild(todoItem);
+  });
+  return target;
+};
+
 // UI class
 export default class UI {
   static urlSlug(title) {
@@ -169,6 +192,7 @@ export default class UI {
 
   static displayProjects() {
     const projects = Store.getProjects();
+    UI.addAllToDos(projects);
     projects.forEach((project) => {
       UI.addProjects(project);
     });
@@ -188,6 +212,14 @@ export default class UI {
     const content = document.querySelector('#v-pills-tabContent');
     const target = toDosDisplayer(prjc);
     content.appendChild(target);
+  }
+
+  static addAllToDos(prjcts) {
+    const content = document.querySelector('#v-pills-home');
+    prjcts.forEach((prjct) => {
+      const target = allToDosDisplayer(prjct);
+      content.appendChild(target);
+    });
   }
 
   static addButton() {
