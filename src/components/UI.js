@@ -76,13 +76,12 @@ export default class UI {
       projects.forEach((project) => {
         project.todos.forEach((todo) => {
             if(todo.time == time) {
-              document.querySelector('#title').value = todo.time;
                document.querySelector('#title').value = todo.todoTitle;
-               document.querySelector('#description').value = todo.description;
-               document.querySelector('#duedate').value = todo.dueDate;
+               document.querySelector('#description').value = todo.desc;
+               document.querySelector('#due-date').value = todo.dueDate;
                document.querySelector('#priority').value = todo.priority;
                document.querySelector('#notes').value = todo.notes;
-               document.querySelector('#project').value = todo.project
+               document.querySelector('#project').value = project.proTitle;
             }
         });
     });
@@ -125,11 +124,11 @@ const editToDo = () => {
    form.id = "update-form";
    console.log(form.lastElementChild.value)
    form.lastElementChild.value = 'update todo'
-   form.lastElementChild.addEventListener('click', (e) => {// use e
+   form.lastElementChild.addEventListener('click', (e) => {
     e.preventDefault();
     const todoTitle = document.querySelector('#title').value;
     const description = document.querySelector('#description').value;
-    const dueDate = document.querySelector('#duedate').value;
+    const dueDate = document.querySelector('#due-date').value;
     const priority = document.querySelector('#priority').value;
     const notes = document.querySelector('#notes').value;
     const proTitle = document.querySelector('#project').value;
@@ -152,8 +151,7 @@ const editToDo = () => {
       time: identifier
     }
     let project = proTitle;
-    console.log(newTodos, project);
-    Store.updateToDo(identifier, newTodos, project);
+    Store.updateToDo(newTodos, project);
    })
  }
 
@@ -166,7 +164,7 @@ document.querySelector('#todo-form').addEventListener('submit', (e) => {
     e.preventDefault();
     const todoTitle = document.querySelector('#title').value;
     const description = document.querySelector('#description').value;
-    const dueDate = document.querySelector('#duedate').value;
+    const dueDate = document.querySelector('#due-date').value;
     const priority = document.querySelector('#priority').value;
     const notes = document.querySelector('#notes').value;
     const proTitle = document.querySelector('#project').value;
@@ -179,7 +177,7 @@ document.querySelector('#todo-form').addEventListener('submit', (e) => {
       }
     
       const check = checkValue(checkInput);
-  
+      console.log(description);
     showModal();
 
     const project = new Project(proTitle);
@@ -228,13 +226,13 @@ const toDosDisplayer = (prjc) => {
   target.setAttribute("role", "tabpanel");
   prjc.todos.forEach(function(todo) {
       const todoItem = document.createElement('div');
-      todoItem.setAttribute("class", "row");
+      todoItem.setAttribute("class", "row border-bottom pb-2 mt-2");
       todoItem.innerHTML = `
       <div class="col-10 row">
       <div class="col-12 col-md-6 row">
       <li class="d-none">${todo.time}</li>
       <li class="col">${todo.todoTitle}</li>
-      <li class="col">${todo.description}</li>
+      <li class="col">${todo.desc}</li>
       <li class="col">${todo.dueDate}</li>
       </div>
       <div class="col-12 col-md-6 row">

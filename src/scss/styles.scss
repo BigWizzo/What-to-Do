@@ -4,6 +4,14 @@
   font-family: "Righteous", cursive;
 }
 
+.main {
+  font-size: clamp(1rem, 1.5vw, 1.3rem); 
+}
+
+.row {
+  margin: 0;
+}
+
 .inter-title {
   color: rgb(151, 34, 34);
 }
