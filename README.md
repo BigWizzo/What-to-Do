@@ -1,64 +1,79 @@
-# webpackTemplate
-This is a template for webpack settings
+# What To Do
 
-## :hammer: Built with
+- Javascript app for creating projects and todos for themselves.
+- User can create, update and delete projects and its todos.
 
-- webpack
+![screenshot](screenshot.png)
 
-## :hammer: Content
+## Live Demo
 
-1. Sass-loader.
-2. HtmlWebpackPlugin.
-3. MiniCssExtractPlugin.
-4. CssMinimizerPlugin
+[Live version](https://BigWizzo.github.io/What-to-Do/)
 
+## Built With
 
-## :construction_worker: Getting Started
+- Javascript
+- HTML
+- Webpack
+- Sass
+- Bootstrap
 
-To get a local copy up and running follow these simple steps:
+## Getting Started
 
-1. Go to the [repository page](https://github.com/kcotrinam/Portfolio/).
-2. Press the "Code" button and copy the link.
-3. Clone it using git command `git clone <link>`.
+To get a local copy up and running follow these simple example steps.
 
-## :construction_worker: Pre-requisites?
+### Setup
 
-1. Install node-js
+- Open the console
+- Download or git clone https://github.com/karmaester/What-to-Do.git
+- cd Books-Books
 
-## :construction_worker: How to use it?
+Install Node and npm:
 
-1. Click on `Use this template`.
-2. Create your repository
-3. Clone your new repository: `git clone <you_repository_link`.
-4. Move to your local repository: `cd <Your_repository_name></Your_repository_name>`.
-5. run `npm install`
+```
+  sudo apt install nodejs
+  sudo apt install npm
+```
 
-## :bust_in_silhouette: Author
+- Open index.html file in browser
 
-👤 **Kenvin Cotrina**
+### Github Actions
 
-- GitHub: [kcotrinam](https://github.com/kcotrinam) 
-- Twitter: [@kcotrinam_dev](https://twitter.com/kcotrinam_dev)
-- LinkedIn: [KevinCotrina](https://www.linkedin.com/in/kevincotrina/ )
+To make sure the linters' checks using Github Actions work properly, you should follow the next steps:
 
-## 🤝 :raised_hand: :raised_hand: Contributions
+1. On your recent repo, enable the GitHub Actions in the Actions tab.
+2. Create the `feature/branch` and push.
+3. Open a PR from the `feature/branch` when your work is done.
 
-Contributions, issues, and feature requests are welcome!
+## Authors
 
-Feel free to check the [issues page](https://github.com/kcotrinam/webpackTemplate/issues).
+👤 **Khristian Rojas**
 
-## :muscle: Show your support
+- Github: [@githubhandle](https://github.com/karmaester)
+- Twitter: [@twitterhandle](https://twitter.com/karmaendlich)
+- Linkedin: [linkedin](https://www.linkedin.com/in/khristian-rojas/)
+
+👤 **Will Nyamunokora**
+
+- Github: [@bigwizzo](https://github.com/bigwizzo)
+- Twitter: [@willnyamunokora](https://twitter.com/willnyamunokora)
+- Linkedin: [@willnyamunokora](https://linkedin.com/in/willnyamunokora)
+
+## 🤝 Contributing
+
+Contributions, issues and feature requests are welcome!
+
+Feel free to check the [issues page](https://github.com/karmaester/What-to-Do/issues).
+
+## Show your support
 
 Give a ⭐️ if you like this project!
 
-## :grey_exclamation: Acknowledgment
+## Acknowledgments
 
-- [Webpack](https://webpack.js.org/)
-- [Sass-loader](https://github.com/webpack-contrib/sass-loader)
-- [Html-Webpack-plguin](https://github.com/jantimon/html-webpack-plugin)
-- [Mini-Css-Extract-Plugin](https://github.com/webpack-contrib/mini-css-extract-plugin)
-- [Css-Minimizer-Webpack-Plugin](https://github.com/webpack-contrib/css-minimizer-webpack-plugin)
+- Microverse
+- Stand up Team
+- TSEs
 
- ## 📝 License
+## 📝 License
 
-This project is [MIT](LICENSE) licensed.
+This project is [MIT](https://opensource.org/licenses/MIT) licensed.
