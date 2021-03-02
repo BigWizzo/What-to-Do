@@ -1,11 +1,13 @@
+/* stylelint-disable csstree/validator */
 @import "~bootstrap/scss/bootstrap";
 @import url("https://fonts.googleapis.com/css2?family=Courgette&family=Righteous&display=swap");
+
 * {
   font-family: "Righteous", cursive;
 }
 
 .main {
-  font-size: clamp(1rem, 1.5vw, 1.3rem); 
+  font-size: clamp(1rem, 1.5vw, 1.3rem);
 }
 
 .row {
@@ -63,7 +65,6 @@
 
 li {
   list-style: none;
-
 }
 
 .tab-content {
@@ -78,7 +79,6 @@ li {
   .form {
     max-width: 75%;
   }
-
 }
 
 @media (min-width: 600px) {
@@ -86,3 +86,4 @@ li {
     max-width: 30%;
   }
 }
+/* stylelint-enable csstree/validator */
