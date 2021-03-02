@@ -30,8 +30,8 @@ export default class UI {
         const button = tabProjectBtn(prjc);
         const buttonDel = delProjectBtn();
         button.innerText = `${prjc.proTitle}`;
-        menu.appendChild(buttonDel);
         menu.appendChild(button);
+        menu.appendChild(buttonDel);
         const content = document.querySelector('#v-pills-tabContent');
         const target = toDosDisplayer(prjc);
         content.appendChild(target);
@@ -114,8 +114,8 @@ const editToDo = () => {
       showModal();
       UI.fillFields(identifier);
       updateForm(identifier);
-      // UI.deletePrTab(e.target);
-      // Store.removePr(identifier);
+      UI.deletePrTab(e.target);
+      Store.removePr(identifier);
     })
   });
  }
@@ -125,7 +125,8 @@ const editToDo = () => {
    form.id = "update-form";
    console.log(form.lastElementChild.value)
    form.lastElementChild.value = 'update todo'
-   form.lastElementChild.addEventListener('click', (e) => {
+   form.lastElementChild.addEventListener('click', (e) => {// use e
+    e.preventDefault();
     const todoTitle = document.querySelector('#title').value;
     const description = document.querySelector('#description').value;
     const dueDate = document.querySelector('#duedate').value;
@@ -133,7 +134,26 @@ const editToDo = () => {
     const notes = document.querySelector('#notes').value;
     const proTitle = document.querySelector('#project').value;
     const checkInput = document.querySelector('#flexCheckChecked');
-    console.log(todoTitle)
+    function checkValue(read) {
+      if (read.checked) {
+        return 'Done';
+      }
+      return 'Not Done';
+    }
+  
+    const check = checkValue(checkInput);
+    let newTodos = {
+      todoTitle: todoTitle,
+      desc: description,
+      dueDate: dueDate,
+      priority: priority,
+      notes: notes,
+      checkList: check,
+      time: identifier
+    }
+    let project = proTitle;
+    console.log(newTodos, project);
+    Store.updateToDo(identifier, newTodos, project);
    })
  }
 

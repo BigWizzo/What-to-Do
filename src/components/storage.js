@@ -46,6 +46,23 @@ export default class Store {
         localStorage.setItem('projects', JSON.stringify(projects))
     }
 
+    static updateToDo(identifier, newTodos, project) {
+        const projects = Store.getProjects();
+
+        projects.forEach((prjct) => {
+            if(prjct.proTitle == project) {
+                prjct.todos.forEach((todo, index) => {
+                    if(todo.time == identifier) {
+                        console.log(todo.time)
+                        prjct.todos[index] = newTodos;
+                    }
+                });
+            }
+        });
+
+        localStorage.setItem('projects', JSON.stringify(projects))
+    }
+
     static removePr(name) {
         const projects = Store.getProjects();
 
