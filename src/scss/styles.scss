@@ -25,6 +25,26 @@
   font-size: clamp(1.5rem, 2vw, 2rem);
 }
 
+.dissapear {
+  color: white;
+}
+
+.dissapear:hover {
+  color: red;
+}
+
+.nav-link:hover {
+  background-color: darken($color: rgb(223, 249, 255), $amount: 5);
+}
+
+.blocker {
+  width: 15vw;
+  height: 22px;
+  position: absolute;
+  top: 40px;
+  background-color: white;
+}
+
 .form-container {
   position: absolute;
   top: 0;
