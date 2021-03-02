@@ -22,6 +22,7 @@ export default class UI {
         UI.addButton();
         UI.addRemoveButton();
         deleteProject();
+        editToDo();
     }
 
     static addProjects(prjc) {
@@ -82,6 +83,18 @@ const deleteProject = () => {
       let identifier = e.target.parentElement.previousSibling.innerText;
       UI.deletePrTab(e.target);
       Store.removePr(identifier);
+    })
+  });
+ }
+
+const editToDo = () => {
+  const editBtns = document.querySelectorAll('#edit');
+  editBtns.forEach(function (item){
+    item.addEventListener('click', (e) => {
+      let identifier = item.parentElement.parentElement.parentElement.firstChild.nextSibling.firstChild.nextSibling.firstChild.nextSibling.innerText;
+      console.log(identifier);
+      // UI.deletePrTab(e.target);
+      // Store.removePr(identifier);
     })
   });
  }
@@ -174,7 +187,7 @@ const toDosDisplayer = (prjc) => {
       </div>
       <div class="col-2 row">
       <span class="col-6" id="delete"><a href="#" class="btn btn-danger btn-sm delete"><i class="far fa-trash-alt"></i></a></span>
-      <span class="col-6"><a href="#" class="btn btn-primary btn-sm delete"><i class="far fa-edit"></i></a></span>
+      <span class="col-6"><a href="#" id="edit" class="btn btn-primary btn-sm ml-1"><i class="far fa-edit"></i></a></span>
       </div>
       `
       ;
