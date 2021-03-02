@@ -122,6 +122,7 @@ const editToDo = () => {
 
  const updateForm = () => {
    const form = document.querySelector('#todo-form');
+   form.id = "update-form";
    console.log(form.lastElementChild.value)
    form.lastElementChild.value = 'update todo'
    form.lastElementChild.addEventListener('click', (e) => {

@@ -28,7 +28,7 @@ export default class Store {
                 }
             }
         }
-        location.reload();
+        // location.reload();
     }
     
     static removeToDo(time) {
