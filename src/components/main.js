@@ -10,8 +10,8 @@ export default class Tabs {
     <div class="row">
     <div class="col-3">
       <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-        <a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true">Home</a>
         <div class="blocker"></div>
+        <a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true">Home</a>
       </div>
     </div>
     <div class="col-9">
@@ -23,14 +23,3 @@ export default class Tabs {
     `;
   }
 }
-
-// Remove a book
-
- 
-//  .addEventListener('click', (e) => {
-//   // UI.deleteBook(e.target);
-//   console.log(e.target);
-//   // const pagesPar = e.target.parentElement.previousElementSibling.previousElementSibling.textContent;
-//   // Store.removeBook(titlePar, pagesPar);
-//   // UI.showAlert('Book removed', 'success');
-// });

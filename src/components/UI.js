@@ -3,6 +3,7 @@ import Project from './projects.js';
 
 //UI class
 export default class UI {
+
     static urlSlug(title) {
           return title
             .split(/\W/)
@@ -12,6 +13,7 @@ export default class UI {
             .join("-")
             .toLowerCase();
     }
+
     static displayProjects() {
         const projects = Store.getProjects();
         projects.forEach((project) => {
@@ -19,6 +21,7 @@ export default class UI {
         });
         UI.addButton();
         UI.addRemoveButton();
+        deleteProject();
     }
 
     static addProjects(prjc) {
@@ -45,9 +48,12 @@ export default class UI {
     }
 
     static deleteToDo(el) {
-      // if(el.classList.contains('delete')) {
         el.parentElement.parentElement.remove();
-      // }
+    }
+
+    static deletePrTab(el) {
+        el.parentElement.previousSibling.remove();
+        el.parentElement.remove();
     }
 
     static addRemoveButton() {
@@ -63,11 +69,22 @@ export default class UI {
 
     static clearFields() {
     }
-    static deleteBook(el) {
-      }
+
+
    static showAlert(message, className) {
    }
 }
+
+const deleteProject = () => {
+  const deleteBtns = document.querySelectorAll('#delete-project');
+  deleteBtns.forEach(function (item){
+    item.addEventListener('click', (e) => {
+      let identifier = e.target.parentElement.previousSibling.innerText;
+      UI.deletePrTab(e.target);
+      Store.removePr(identifier);
+    })
+  });
+ }
 
 const showModal = () => {
     const continueContainer = document.querySelector('.form-container')
@@ -104,7 +121,6 @@ document.querySelector('#todo-form').addEventListener('submit', (e) => {
       checkList: check,
       time: new Date().getTime()
     }
-    // const project = Store.checkExistence(tempProject);
     project.todos.push(newTodos);
     
     UI.addProjects(project);
@@ -166,5 +182,3 @@ const toDosDisplayer = (prjc) => {
   });
   return target;
 }
-
-

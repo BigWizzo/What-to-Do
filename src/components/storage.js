@@ -45,5 +45,17 @@ export default class Store {
 
         localStorage.setItem('projects', JSON.stringify(projects))
     }
+
+    static removePr(name) {
+        const projects = Store.getProjects();
+
+        projects.forEach((project, index) => {
+            if(project.proTitle == name) {
+                projects.splice(index, 1);
+            }
+        });
+
+        localStorage.setItem('projects', JSON.stringify(projects))
+    }
     
 }
