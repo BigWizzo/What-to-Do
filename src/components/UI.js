@@ -1,4 +1,4 @@
-/* eslint-disable no-use-before-define, max-len */
+/* eslint-disable no-use-before-define, max-len, eqeqeq */
 import Store from './storage';
 import Project from './projects';
 
@@ -262,7 +262,7 @@ export default class UI {
     const projects = Store.getProjects();
     projects.forEach((project) => {
       project.todos.forEach((todo) => {
-        if (todo.time === time) {
+        if (todo.time == time) {
           document.querySelector('#title').value = todo.todoTitle;
           document.querySelector('#description').value = todo.desc;
           document.querySelector('#due-date').value = todo.dueDate;
@@ -276,4 +276,4 @@ export default class UI {
     });
   }
 }
-/* eslint-enable no-use-before-define, max-len */
+/* eslint-enable no-use-before-define, max-len, eqeqeq */

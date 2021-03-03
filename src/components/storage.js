@@ -1,4 +1,5 @@
-/* eslint-disable no-restricted-globals, max-len */
+/* eslint-disable no-restricted-globals, eqeqeq */
+
 export default class Store {
   static getProjects() {
     let projects;
@@ -13,7 +14,8 @@ export default class Store {
 
   static addToDo(project, todo) {
     const projects = Store.getProjects();
-    if (projects.some((element) => element.proTitle === project.proTitle) === false || projects.length === 0) {
+    const checkSome = projects.some((element) => element.proTitle === project.proTitle);
+    if (checkSome === false || projects.length === 0) {
       projects.push(project);
       localStorage.setItem('projects', JSON.stringify(projects));
     } else {
@@ -47,7 +49,7 @@ export default class Store {
     projects.forEach((prjct) => {
       if (prjct.proTitle === project) {
         prjct.todos.forEach((todo, index) => {
-          if (todo.time.to_s === newTodos.time.to_s) {
+          if (todo.time == newTodos.time) {
             prjct.todos[index] = newTodos;
           }
         });
@@ -70,4 +72,5 @@ export default class Store {
     localStorage.setItem('projects', JSON.stringify(projects));
   }
 }
-/* eslint-enable no-restricted-globals, max-len */
+
+/* eslint-enable no-restricted-globals, eqeqeq */

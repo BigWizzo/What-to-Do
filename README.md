@@ -34,7 +34,13 @@ Install Node and npm:
   sudo apt install npm
 ```
 
-- Open index.html file in browser
+Run the following commands
+
+```
+   npm run dev
+```
+
+- Open index.html file from the dist folder in browser
 
 ### Github Actions
 
