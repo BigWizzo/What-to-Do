@@ -7,7 +7,7 @@
 
 ## Live Demo
 
-[Live version](https://BigWizzo.github.io/What-to-Do/)
+[Live version](https://bigwizzo.github.io/What-to-Do/)
 
 ## Built With
 
@@ -24,7 +24,7 @@ To get a local copy up and running follow these simple example steps.
 ### Setup
 
 - Open the console
-- Download or git clone https://github.com/karmaester/What-to-Do.git
+- Download or git clone https://github.com/bigwizzo/What-to-Do.git
 - cd Books-Books
 
 Install Node and npm:
@@ -62,7 +62,7 @@ To make sure the linters' checks using Github Actions work properly, you should 
 
 Contributions, issues and feature requests are welcome!
 
-Feel free to check the [issues page](https://github.com/karmaester/What-to-Do/issues).
+Feel free to check the [issues page](https://github.com/bigwizzo/What-to-Do/issues).
 
 ## Show your support
 

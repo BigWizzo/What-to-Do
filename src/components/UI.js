@@ -262,7 +262,7 @@ export default class UI {
     const projects = Store.getProjects();
     projects.forEach((project) => {
       project.todos.forEach((todo) => {
-        if (todo.time === time) {
+        if (todo.time.to_i === time.to_i) {
           document.querySelector('#title').value = todo.todoTitle;
           document.querySelector('#description').value = todo.desc;
           document.querySelector('#due-date').value = todo.dueDate;
