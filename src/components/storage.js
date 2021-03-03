@@ -18,7 +18,7 @@ export default class Store {
       localStorage.setItem('projects', JSON.stringify(projects));
     } else {
       for (let i = 0; i <= projects.length - 1; i += 1) {
-        if (projects[i].proTitle.to_i === project.proTitle.to_i) {
+        if (projects[i].proTitle === project.proTitle) {
           projects[i].todos.push(todo);
           localStorage.setItem('projects', JSON.stringify(projects));
         }
@@ -45,9 +45,9 @@ export default class Store {
     const projects = Store.getProjects();
 
     projects.forEach((prjct) => {
-      if (prjct.proTitle.to_i === project.to_i) {
+      if (prjct.proTitle === project) {
         prjct.todos.forEach((todo, index) => {
-          if (todo.time.to_i === newTodos.time.to_i) {
+          if (todo.time.to_s === newTodos.time.to_s) {
             prjct.todos[index] = newTodos;
           }
         });
@@ -55,14 +55,14 @@ export default class Store {
     });
 
     localStorage.setItem('projects', JSON.stringify(projects));
-    location.reload();
+    // location.reload();
   }
 
   static removePr(name) {
     const projects = Store.getProjects();
 
     projects.forEach((project, index) => {
-      if (project.proTitle.to_i === name.to_i) {
+      if (project.proTitle === name) {
         projects.splice(index, 1);
       }
     });
