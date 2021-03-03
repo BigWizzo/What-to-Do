@@ -1,6 +1,7 @@
 /* eslint-disable no-use-before-define, max-len, eqeqeq */
 import Store from './storage';
 import Project from './projects';
+import Todo from './todos';
 
 const deleteProject = () => {
   const deleteBtns = document.querySelectorAll('#delete-project');
@@ -87,15 +88,7 @@ document.querySelector('#todo-form').addEventListener('submit', (e) => {
   showModal();
 
   const project = new Project(proTitle);
-  const newTodos = {
-    todoTitle,
-    desc: description,
-    dueDate,
-    priority,
-    notes,
-    checkList: check,
-    time: new Date().getTime(),
-  };
+  const newTodos = new Todo(todoTitle, description, dueDate, priority, notes, check);
   project.todos.push(newTodos);
 
   UI.addProjects(project);
