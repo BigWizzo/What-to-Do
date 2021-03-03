@@ -55,7 +55,7 @@ export default class Store {
     });
 
     localStorage.setItem('projects', JSON.stringify(projects));
-    // location.reload();
+    location.reload();
   }
 
   static removePr(name) {
