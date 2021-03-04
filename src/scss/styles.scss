@@ -1,3 +1,89 @@
-body {
-  background: url('./../images/prueba.png')
+/* stylelint-disable csstree/validator */
+@import "~bootstrap/scss/bootstrap";
+@import url("https://fonts.googleapis.com/css2?family=Courgette&family=Righteous&display=swap");
+
+* {
+  font-family: "Righteous", cursive;
 }
+
+.main {
+  font-size: clamp(1rem, 1.5vw, 1.3rem);
+}
+
+.row {
+  margin: 0;
+}
+
+.inter-title {
+  color: rgb(151, 34, 34);
+}
+
+.form-group {
+  display: inline;
+}
+
+.form {
+  font-size: clamp(1rem, 1.5vw, 1.5rem);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 100;
+}
+
+.addbtn {
+  font-size: clamp(1.5rem, 2vw, 2rem);
+}
+
+.dissapear {
+  color: white;
+}
+
+.dissapear:hover {
+  color: red;
+}
+
+.nav-link:hover {
+  background-color: darken($color: rgb(223, 249, 255), $amount: 5);
+}
+
+.form-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.473);
+  z-index: 100;
+  transition: transform 0.5s;
+  transform: translateY(-110vh);
+}
+
+.show-modal {
+  transform: translateY(0);
+}
+
+li {
+  list-style: none;
+}
+
+.tab-content {
+  width: 100%;
+}
+
+@media (max-width: 600px) {
+  .respond {
+    flex-direction: column;
+  }
+
+  .form {
+    max-width: 75%;
+  }
+}
+
+@media (min-width: 600px) {
+  .form {
+    max-width: 30%;
+  }
+}
+/* stylelint-enable csstree/validator */
