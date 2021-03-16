@@ -20,5 +20,9 @@ export default class Tabs {
     </div>
   </div>
     `;
+
+    return content;
   }
 }
+
+module.exports = Tabs.createTabs;
