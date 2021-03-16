@@ -24,5 +24,3 @@ export default class Tabs {
     return content;
   }
 }
-
-module.exports = Tabs;

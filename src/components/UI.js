@@ -270,7 +270,7 @@ export default class UI {
   }
 }
 
-export {
-  showModal
-};
+// export {
+//   showModal
+// };
 /* eslint-enable no-use-before-define, max-len, eqeqeq */
