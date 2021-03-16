@@ -269,4 +269,8 @@ export default class UI {
     });
   }
 }
+
+export {
+  showModal
+};
 /* eslint-enable no-use-before-define, max-len, eqeqeq */

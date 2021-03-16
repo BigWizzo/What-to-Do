@@ -25,4 +25,4 @@ export default class Tabs {
   }
 }
 
-module.exports = Tabs.createTabs;
+module.exports = Tabs;
