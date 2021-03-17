@@ -31,10 +31,9 @@ export default class Store {
 
   static removeToDo(time) {
     const projects = Store.getProjects();
-
     projects.forEach((project) => {
       project.todos.forEach((todo, index) => {
-        if (todo.time === time) {
+        if (todo.time.to_i === time.to_i) {
           project.todos.splice(index, 1);
         }
       });

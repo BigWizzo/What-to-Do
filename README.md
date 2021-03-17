@@ -42,6 +42,14 @@ Run the following commands
 
 - Open index.html file from the dist folder in browser
 
+### Testing
+
+Run the following commands
+
+```
+   npm run watch
+```
+
 ### Github Actions
 
 To make sure the linters' checks using Github Actions work properly, you should follow the next steps:
