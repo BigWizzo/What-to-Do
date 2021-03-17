@@ -1,7 +1,3 @@
-import UI from './UI';
-
-document.addEventListener('DOMContentLoaded', UI.displayProjects);
-
 export default class Tabs {
   static createTabs() {
     const content = document.getElementById('content');
@@ -20,7 +16,5 @@ export default class Tabs {
     </div>
   </div>
     `;
-
-    return content;
   }
 }
