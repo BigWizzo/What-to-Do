@@ -68,32 +68,35 @@ const showModal = () => {
   continueContainer.classList.toggle('show-modal');
 };
 
-document.querySelector('#todo-form').addEventListener('submit', (e) => {
-  e.preventDefault();
-  const todoTitle = document.querySelector('#title').value;
-  const description = document.querySelector('#description').value;
-  const dueDate = document.querySelector('#due-date').value;
-  const priority = document.querySelector('#priority').value;
-  const notes = document.querySelector('#notes').value;
-  const proTitle = document.querySelector('#project').value;
-  const checkInput = document.querySelector('#flexCheckChecked');
-  function checkValue(read) {
-    if (read.checked) {
-      return 'Done';
+const receiveValues = () => {
+  document.querySelector('#todo-form').addEventListener('submit', (e) => {
+    e.preventDefault();
+    const todoTitle = document.querySelector('#title').value;
+    const description = document.querySelector('#description').value;
+    const dueDate = document.querySelector('#due-date').value;
+    const priority = document.querySelector('#priority').value;
+    const notes = document.querySelector('#notes').value;
+    const proTitle = document.querySelector('#project').value;
+    const checkInput = document.querySelector('#flexCheckChecked');
+    function checkValue(read) {
+      if (read.checked) {
+        return 'Done';
+      }
+      return 'Not Done';
     }
-    return 'Not Done';
-  }
-
-  const check = checkValue(checkInput);
-  showModal();
-
-  const project = new Project(proTitle);
-  const newTodos = new Todo(todoTitle, description, dueDate, priority, notes, check);
-  project.todos.push(newTodos);
-
-  UI.addProjects(project);
-  Store.addToDo(project, newTodos);
-});
+  
+    const check = checkValue(checkInput);
+    showModal();
+  
+    const project = new Project(proTitle);
+    const newTodos = new Todo(todoTitle, description, dueDate, priority, notes, check);
+    project.todos.push(newTodos);
+  
+    UI.addProjects(project);
+    Store.addToDo(project, newTodos);
+  });
+}
+receiveValues();
 
 const delProjectBtn = () => {
   const buttonDel = document.createElement('a');
