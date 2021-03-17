@@ -34,6 +34,6 @@ const receiveValues = () => {
 
     UI.addProjects(project);
     Store.addToDo(project, newTodos);
-});
+  });
 };
 receiveValues();

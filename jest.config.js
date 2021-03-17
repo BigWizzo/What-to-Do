@@ -7,6 +7,6 @@
 // };
 
 module.exports = {
-  testEnvironment: "jsdom",
+  testEnvironment: 'jsdom',
   verbose: false,
 };

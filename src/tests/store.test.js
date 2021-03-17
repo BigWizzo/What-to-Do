@@ -24,4 +24,4 @@ describe('Store', () => {
   it('removePr is a function', () => {
     expect(typeof Store.removePr).toBe('function');
   });
-})
+});
